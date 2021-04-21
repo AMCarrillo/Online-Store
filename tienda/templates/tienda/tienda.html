@@ -5,20 +5,31 @@
 {% block content %}
 
 <div class="container">
+
+    <div style="float:right;">
+        <p style="color: white;">Texto de prueba</p>
+    </div>
+
     <div class="row">
 
 {% for producto in productos %}
 
         <div class="col-md-3">
-            <div class="card" style="width: 100%; margin: 10px 10px;">
-                <img src="{{producto.imagen.url}}" class="card-img-top">
-                <div class="card-body" style="text-align: center;">
-                    <h7 class="card-title">{{producto.nombre}}</h7>
-                    <p class="card-text">{{producto.precio}}&nbsp;$</p>
-                
-                </div><!--card-body cierre-->
-            </div><!--card cierre-->
+        <div class="card" style="width: 100%; margin: 5px 5px;">
+            <img src="{{producto.imagen.url}}" class="card-img-top">
+            
+            <div class="card-body" style="text-align: center;">
+                <h7 class="card-title">{{producto.nombre}}</h7>
+                <p class="card-text">{{producto.precio}}&nbsp;$</p>
+            </div><!--card-body cierre-->
+
+            <div class="card-footer text-center">
+                <a href="#" class="btn btn-success">Agregar al carro</a>
+            </div>
+
+        </div><!--card cierre-->
         </div><!--col cierre-->
+
 {% endfor %}
 
     </div><!--row cierre-->
