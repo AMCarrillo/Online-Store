@@ -12,14 +12,15 @@
         </tr>
     </thead>
     <tbody>
+    
         {% if request.session.carro.items %}
             {% for key, value in request.session.carro.items %}
                 <tr class="text-center">
                     <td>{{value.nombre}}</td>
                     <td>{{value.cantidad}}</td>
                     <td>
-                        <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
-                        <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-success">-</a><br>
+                        <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success" style="background:#4286f4; border:#4286f4">+</a>
+                        <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-success" style="background:#4286f4; border:#4286f4">-</a><br>
                         {{value.precio}} $
                     </td>
 
@@ -38,7 +39,7 @@
     <tfoot>
         <tr>
             <td colspan="3">
-                Total: {{importe_total_carro}} $
+                Total: <!--{{importe_total_carro}}--> $
             </td>
         </tr>
     </tfoot>
